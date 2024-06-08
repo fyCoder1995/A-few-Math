@@ -2,12 +2,15 @@ import java.util.ArrayList;
 
 public class Lesson5_1 {
   public static long[] rewards = { 1, 2, 5, 10 };// 四种面额的纸币
+  public static int count = 0;
 
   // 使用函数的递归（嵌套）调用，找出所有可能的奖赏组合
   // totalReward：奖赏总金额，result：保存当前的解
   public static void get(long totalReward, ArrayList<Long> result) {
     if (totalReward == 0) {
+      count++;
       System.out.println(result);
+      System.out.println(count);
       return;
     } else if (totalReward < 0) {
       return;
@@ -20,7 +23,7 @@ public class Lesson5_1 {
     }
   }
 
-  //
+  // 思考题 输入一个数，找出其所有的因数
   public static void recursion(long total, ArrayList<Long> result) {
     if (total == 1) {
       if (!result.contains(1L))
